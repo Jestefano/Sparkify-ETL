@@ -50,6 +50,12 @@ From this we can see that 43 songs do not have year provided.
 And this represents roughly 60% of the total songs. 
 This must be fixed since some analysis can be missinterpred.
 
+## BI
+I have built a Power BI dashboard that can be found [here](https://app.powerbi.com/view?r=eyJrIjoiNGQ5NTc5ZWYtYTljYi00MDY2LThlMTktYjE0Yzk5YmFkZDBiIiwidCI6ImNjNjNkZjFhLTZiYzktNGQ3My1iNzM0LWEyOTRkMzI1MzE4NyIsImMiOjR9).
+We can use it to extract is extract insights such as:
+- Women consume more the product than men. 
+- The most used hour is 4pm
+
 ## Next steps
 As any project, there are things that can be improved or added. 
 Here I present a list of things that I consider are important for a second stage of the project.
