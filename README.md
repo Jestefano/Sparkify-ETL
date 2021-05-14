@@ -41,7 +41,7 @@ With the data that we have we can see that there are more females in the paid gr
 - We can also check data quality with SQL queries:
 ```sql
 SELECT 
-    SUM(CASE WHEN year = 0 THEN 1 ELSE 0 END) year_quantity_null, 
+    SUM(CASE WHEN year = 0 THEN 1 ELSE 0 END) year_quantity_Null, 
     ROUND(AVG(CASE WHEN year = 0 THEN 1 ELSE 0 END)*100,2) year_percentage_null 
 FROM songs
 ```
@@ -49,12 +49,6 @@ FROM songs
 From this we can see that 43 songs do not have year provided.
 And this represents roughly 60% of the total songs. 
 This must be fixed since some analysis can be missinterpred.
-
-## BI
-I have built a Power BI dashboard that can be found [here](https://app.powerbi.com/view?r=eyJrIjoiNGQ5NTc5ZWYtYTljYi00MDY2LThlMTktYjE0Yzk5YmFkZDBiIiwidCI6ImNjNjNkZjFhLTZiYzktNGQ3My1iNzM0LWEyOTRkMzI1MzE4NyIsImMiOjR9).
-We can use it to extract is extract insights such as:
-- Women consume more the product than men. 
-- The most used hour is 4pm
 
 ## Next steps
 As any project, there are things that can be improved or added. 

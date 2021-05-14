@@ -12,11 +12,11 @@ songplay_table_create = ("""
 CREATE TABLE IF NOT EXISTS songplays 
 (
     songplay_id SERIAL8 PRIMARY KEY, 
-    start_time  CHAR(18) NOT NULL, 
-    user_id     INT NOT NULL, 
+    start_time  CHAR(18) NOT NULL references time(start_time), 
+    user_id     INT NOT NULL references users(user_id), 
     level       CHAR(4) NOT NULL, 
-    song_id     CHAR(18), 
-    artist_id   CHAR(18), 
+    song_id     CHAR(18) references songs(song_id), 
+    artist_id   CHAR(18) references artists(artist_id), 
     session_id  INT NOT NULL, 
     location    VARCHAR, 
     user_agent  VARCHAR NOT NULL
@@ -113,16 +113,18 @@ SELECT s.song_id, a.artist_id
 FROM songs s
 JOIN artists a ON s.artist_id = a.artist_id
 WHERE s.title = %s
+AND a.name = %s
+AND ABS(s.duration - %s) < 1
 """)
 
 # QUERY LISTS
 
-create_table_queries = [
-    songplay_table_create, 
+create_table_queries = [ 
     user_table_create, 
     song_table_create, 
     artist_table_create, 
-    time_table_create
+    time_table_create,
+    songplay_table_create
 ]
 
 drop_table_queries = [
