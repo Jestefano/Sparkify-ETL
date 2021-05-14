@@ -41,7 +41,7 @@ With the data that we have we can see that there are more females in the paid gr
 - We can also check data quality with SQL queries:
 ```sql
 SELECT 
-    SUM(CASE WHEN year = 0 THEN 1 ELSE 0 END) year_quantity_Null, 
+    SUM(CASE WHEN year = 0 THEN 1 ELSE 0 END) year_quantity_null, 
     ROUND(AVG(CASE WHEN year = 0 THEN 1 ELSE 0 END)*100,2) year_percentage_null 
 FROM songs
 ```
